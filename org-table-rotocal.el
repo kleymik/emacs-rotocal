@@ -68,12 +68,14 @@
 
 (defmacro dotimes-slow (exp1 exp2) (list 'dotimes exp1 (list 'progn exp2 '(sit-for 0.5))))
 
+;; just one function, call or bind to some key combination
 (defun org-table-rotocal-move-date-topleft (&optional row-shift col-shift)
     "in dates-block of the table:
-      rotate dates-block rows until current date is in top column
-      and    dates-block columns until current date is in leftmost column
-     with args rotate dates-block rows and columns as specified by args"
+       rotate dates-block rows until current date is in top row
+       and dates-block columns until current date is in leftmost column
+     optional args to rotate dates-block rows and columns by specified amounts"
     (interactive "P")
+
     (let* ((row-shift (if row-shift row-shift 4))
            (cur-row (org-table-current-dline))    ; row of cursor position
            (row-delta (- cur-row row-shift))      ; e.g. 6 6-4 => dotimes 2
@@ -93,14 +95,14 @@
 
             ;; rotate selected row to top
             (dotimes (r row-delta)
-              (dotimes-slow (x 6) (org-table-move-row))   ; move top column to bottom
-              (dotimes-slow (x 6) (previous-line)))       ; put cursor back to home = top-left of block
+              (dotimes-slow (x 6) (org-table-move-row))        ; move top row to bottom
+              (dotimes-slow (x 6) (previous-line)))            ; put cursor back to home = top-left of block
 
             ;; rotate selected column to left
             (dotimes (c col-delta)
-              (dotimes-slow (x 4) (org-table-move-column))
-              (dotimes-slow (x 4) (org-table-previous-field)))
+              (dotimes-slow (x 4) (org-table-move-column))     ; move left-most column to right-most
+              (dotimes-slow (x 4) (org-table-previous-field))) ; put cursor back to home = top-left of block
             )
-        (message (concat "Outside dates-block CUR ROW=" (number-to-string cur-row) "CUR COL=" (number-to-string cur-col))))))
+        (message (concat "Outside dates-block: CUR ROW=" (number-to-string cur-row) "CUR COL=" (number-to-string cur-col))))))
 
 
