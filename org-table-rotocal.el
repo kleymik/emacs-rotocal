@@ -27,9 +27,8 @@
 ;; tweaked:
 ;;  - column with current month is manually placed of left hand side of dates-block
 ;;  - column with next month is manually placed of right hand side of dates-block
-;; then added small "rotation" feature org-table-rotocal-move-date-topleft:
-;;  - rotate selected date (where cursor is) block rows and columns so that the date
-;;    is in top left corner
+;; then added small "rotation" (= circular shift) feature org-table-rotocal-move-date-topleft:
+;;  - rotate selected date (where cursor is) block rows and columns so that the date is in top left corner
 ;;
 ;;       2020
 ;;        <---- dates-block ---->
@@ -76,11 +75,14 @@
      optional args to rotate dates-block rows and columns by specified amounts"
     (interactive "P")
 
-    (let* ((row-shift (if row-shift row-shift 4))
+    (defvar home-cell-row 4)                      ; assumes there's three rows above home-cell
+    (defvar home-cell-col 2)                      ; assumes there's one colum left of home-cell
+    
+    (let* ((row-shift (if row-shift row-shift home-cell-row))
            (cur-row (org-table-current-dline))    ; row of cursor position
            (row-delta (- cur-row row-shift))      ; e.g. 6 6-4 => dotimes 2
 
-           (col-shift (if col-shift col-shift 2))
+           (col-shift (if col-shift col-shift home-cell-col))
            (cur-col (org-table-current-column))   ; column of cursor position
            (col-delta (- cur-col col-shift)))     ; e.g. 5 5-2 => dotimes 3
 
