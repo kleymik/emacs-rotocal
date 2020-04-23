@@ -1,5 +1,4 @@
 * a README
-
 ;;  - rotate selected date (where cursor is) block rows and columns so that the date is in top left corner
 ;;
 ;;       2020
@@ -18,3 +17,6 @@
 ;; | Wed | 1 |  8 | 15 | 22 | 29 | SAT | SUN | Fri | Mon | Tue | Thu |
 ;; |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
 ;;        <---- dates-block ---->
+
+
+
