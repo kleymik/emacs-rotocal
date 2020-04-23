@@ -1,0 +1,20 @@
+* a README
+
+;;  - rotate selected date (where cursor is) block rows and columns so that the date is in top left corner
+;;
+;;       2020
+;;        <---- dates-block ---->
+;; |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
+;; | Jul |   |    |    |    |    |     |     |     |     |     |     |
+;; | Apr |   |    |    |    |    | Feb | Mar |     |     | Sep |     |
+;; | JAN | a |  b |  c |  d |  e | Aug | Nov | May | Jun | Dec | Oct |
+;; |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
+;; | Thu | 2 |  9 | 16 | 23 | 30 | SUN | Mon | SAT | Tue | Wed | Fri |
+;; | Fri | 3 | 10 | 17 | 24 | 31 | Mon | Tue | SUN | Wed | Thu | SAT |
+;; | SAT | 4 | 11 | 18 | 25 |    | Tue | Wed | Mon | Thu | Fri | SUN |
+;; | SUN | 5 | 12 | 19 | 26 |    | Wed | Thu | Tue | Fri | SAT | Mon |
+;; | Mon | 6 | 13 | 20 | 27 |    | Thu | Fri | Wed | SAT | SUN | Tue |
+;; | Tue | 7 | 14 | 21 |    | 28 | Fri | SAT | Thu | SUN | Mon | Wed |
+;; | Wed | 1 |  8 | 15 | 22 | 29 | SAT | SUN | Fri | Mon | Tue | Thu |
+;; |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
+;;        <---- dates-block ---->
