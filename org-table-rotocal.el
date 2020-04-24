@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2020 kleymik
 
-;; Author: kleymik <kleymik@btinternet.com>
+;; Author: kleymik <michfkl arobase btinternet.com>
 ;; Keywords: org-mode table
 
 ;; This file is free software; you can redistribute it and/or modify
