@@ -1,4 +1,5 @@
-* a README (best viewed in emacs or a raw file)
+* a README 
+(best viewed in emacs or a raw file)
 
 a small org-mode-table hack
 
