@@ -1,17 +1,22 @@
-* a README 
+* a README
 (best viewed in emacs or a raw file)
 
 a small org-mode-table hack
 
- 
- - rows and columns circular rotation of selected date (where cursor is) 
+#+caption: Demo
+[[file:./rotocal.gif]]
+
+ - rows and columns circular rotation of selected date (where cursor is)
    in dates-block so that selected date moves to top left corner
 
-2020
+
+
+#+BEGIN_SRC
 
    /----- current month
    |      next month-------------\
    V    <---- dates-block ---->  V
+  2020
  |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
  | Jul |   |    |    |    |    |     |     |     |     |     |     |
  | Apr |   |    |    |    |    | Feb | Mar |     |     | Sep |     |
@@ -26,6 +31,9 @@ a small org-mode-table hack
  | Wed | 1 |  8 | 15 | 22 | 29 | SAT | SUN | Fri | Mon | Tue | Thu |
  |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
         <---- dates-block ---->
+
+#+END_SRC
+
 
 * Ack:
 Calendar by dave bakker was found
