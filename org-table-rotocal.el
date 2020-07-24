@@ -32,19 +32,19 @@
 ;;
 ;;       2020
 ;;        <---- dates-block ---->
-;; |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
-;; | Jul |   |    |    |    |    |     |     |     |     |     |     |
-;; | Apr |   |    |    |    |    | Feb | Mar |     |     | Sep |     |
-;; | JAN | a |  b |  c |  d |  e | Aug | Nov | May | Jun | Dec | Oct |
-;; |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
-;; | Thu | 2 |  9 | 16 | 23 | 30 | SUN | Mon | SAT | Tue | Wed | Fri |
-;; | Fri | 3 | 10 | 17 | 24 | 31 | Mon | Tue | SUN | Wed | Thu | SAT |
-;; | SAT | 4 | 11 | 18 | 25 |    | Tue | Wed | Mon | Thu | Fri | SUN |
-;; | SUN | 5 | 12 | 19 | 26 |    | Wed | Thu | Tue | Fri | SAT | Mon |
-;; | Mon | 6 | 13 | 20 | 27 |    | Thu | Fri | Wed | SAT | SUN | Tue |
-;; | Tue | 7 | 14 | 21 |    | 28 | Fri | SAT | Thu | SUN | Mon | Wed |
-;; | Wed | 1 |  8 | 15 | 22 | 29 | SAT | SUN | Fri | Mon | Tue | Thu |
-;; |-----+---+----+----+----+----+-----+-----+-----+-----+-----+-----|
+;; |-----+----+----+----+----+----+-----+-----+-----+-----+-----+-----|
+;; | Jul |    |    |    |    |    |     |     |     |     |     |     |
+;; | Apr |    |    |    |    |    | Feb | Mar |     |     | Sep |     |
+;; | JAN | w1 | w2 | w3 | w4 | w5 | Aug | Nov | May | Jun | Dec | Oct |
+;; |-----+----+----+----+----+----+-----+-----+-----+-----+-----+-----|
+;; | Thu |  2 |  9 | 16 | 23 | 30 | SUN | Mon | SAT | Tue | Wed | Fri |
+;; | Fri |  3 | 10 | 17 | 24 | 31 | Mon | Tue | SUN | Wed | Thu | SAT |
+;; | SAT |  4 | 11 | 18 | 25 |    | Tue | Wed | Mon | Thu | Fri | SUN |
+;; | SUN |  5 | 12 | 19 | 26 |    | Wed | Thu | Tue | Fri | SAT | Mon |
+;; | Mon |  6 | 13 | 20 | 27 |    | Thu | Fri | Wed | SAT | SUN | Tue |
+;; | Tue |  7 | 14 | 21 |    | 28 | Fri | SAT | Thu | SUN | Mon | Wed |
+;; | Wed |  1 |  8 | 15 | 22 | 29 | SAT | SUN | Fri | Mon | Tue | Thu |
+;; |-----+----+----+----+----+----+-----+-----+-----+-----+-----+-----|
 ;;        <---- dates-block ---->
 
 ;;; Installation:
@@ -77,7 +77,7 @@
 
     (defvar home-cell-row 4)                      ; assumes there's three rows above home-cell
     (defvar home-cell-col 2)                      ; assumes there's one colum left of home-cell
-    
+
     (let* ((row-shift (if row-shift row-shift home-cell-row))
            (cur-row (org-table-current-dline))    ; row of cursor position
            (row-delta (- cur-row row-shift))      ; e.g. 6 6-4 => dotimes 2
